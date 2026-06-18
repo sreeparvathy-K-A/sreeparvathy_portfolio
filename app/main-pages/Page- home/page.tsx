@@ -342,20 +342,20 @@ export default function PageHome() {
 
         <section className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-0 py-10 text-left sm:grid-cols-[minmax(0,1.08fr)_minmax(120px,0.92fr)] sm:gap-10 sm:px-8 sm:py-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:py-16">
           <div className="hero-name-aura" />
-          <div className="hero-left-copy flex min-w-0 flex-col items-start text-left">
-            <p className="hero-kicker mb-3 text-[10px] font-black uppercase tracking-[0.32em] text-white/78 sm:mb-5 sm:text-sm sm:tracking-[0.5em]">
+          <div className="hero-left-copy flex min-w-0 max-w-2xl flex-col items-start text-left">
+            <p className="hero-kicker mb-4 text-[10px] font-black uppercase tracking-[0.32em] text-white/78 sm:mb-5 sm:text-sm sm:tracking-[0.5em]">
               Hi, I am
             </p>
-            <h1 className="split-name-text max-w-5xl whitespace-nowrap text-left text-[clamp(1.25rem,6.4vw,5.35rem)] font-black uppercase leading-[0.92]">
+            <h1 className="split-name-text max-w-5xl whitespace-nowrap text-left text-[clamp(1.2rem,6.1vw,5rem)] font-black uppercase leading-none">
               <span className="block">Sreeparvathy K A</span>
             </h1>
-            <p className="mt-5 text-[10px] font-black uppercase tracking-[0.12em] text-[#ff7800] sm:mt-6 sm:text-lg sm:tracking-[0.28em]">
+            <p className="ml-2 mt-6 text-[11px] font-black uppercase tracking-[0.18em] text-[#ff7800] sm:ml-4 sm:mt-7 sm:text-lg sm:tracking-[0.28em]">
               Full Stack Developer
             </p>
-            <p className="mt-5 max-w-xl text-[11px] font-semibold leading-5 text-white/78 sm:mt-7 sm:text-base sm:leading-7">
+            <p className="ml-2 mt-4 max-w-xl text-[12px] font-medium leading-6 text-white/78 sm:ml-4 sm:mt-5 sm:text-base sm:leading-7">
               I build responsive, modern web applications with clean interfaces, reliable APIs, and smooth user experiences using the MERN stack.
             </p>
-            <div className="mt-7 grid w-full max-w-sm grid-cols-2 gap-4 sm:mt-10 sm:flex sm:w-auto sm:max-w-none sm:gap-5">
+            <div className="mt-7 grid w-full max-w-sm grid-cols-2 gap-4 sm:mt-8 sm:flex sm:w-auto sm:max-w-none sm:gap-5">
               <a
                 href="/Sreeparvathy-K-A-CV.pdf"
                 download
