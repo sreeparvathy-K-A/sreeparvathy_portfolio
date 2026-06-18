@@ -60,6 +60,7 @@ const projects = [
 const quickInfo = [
   ["Name", "Sreeparvathy K A"],
   ["Role", "Full Stack Developer (Fresher)"],
+  ["Education", "Master of Computer Applications (MCA)"],
   ["Location", "Kottayam, Kerala, India"],
   ["Email", "Sreeparvathyka63@gmail.com"],
   ["Languages", "English, Malayalam"],
@@ -286,9 +287,27 @@ function SkillList({
 export default function PageHome() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-black text-white">
-      <header className="fixed inset-x-0 top-0 z-50 px-3 py-2 sm:px-8 sm:py-3 lg:px-12">
+      <header className="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-8 lg:px-12">
         <nav className="mx-auto w-full max-w-7xl">
-          <div className="grid grid-cols-5 items-center gap-1 text-center text-[9px] font-black uppercase tracking-[0.04em] text-white sm:flex sm:justify-end sm:gap-4 sm:text-xs sm:tracking-[0.12em]">
+          <details className="mobile-nav relative ml-auto w-fit sm:hidden">
+            <summary
+              className="flex h-9 w-9 cursor-pointer list-none flex-col items-center justify-center gap-1 rounded-md border border-white/40 bg-black/30 backdrop-blur-sm"
+              aria-label="Open navigation menu"
+            >
+              <span className="h-0.5 w-4 rounded-full bg-white" />
+              <span className="h-0.5 w-4 rounded-full bg-white" />
+              <span className="h-0.5 w-4 rounded-full bg-white" />
+            </summary>
+            <div className="absolute right-0 top-11 grid min-w-32 overflow-hidden rounded-md border border-white/20 bg-[#101010]/95 p-1 text-[10px] font-black uppercase tracking-[0.1em] text-white shadow-xl backdrop-blur">
+              <a href="#home" className="nav-link-hover">Home</a>
+              <a href="#about" className="nav-link-hover">About</a>
+              <a href="#skills" className="nav-link-hover">Skills</a>
+              <a href="#projects" className="nav-link-hover">Projects</a>
+              <a href="#contact" className="nav-link-hover">Contact</a>
+            </div>
+          </details>
+
+          <div className="nav-menu-panel ml-auto hidden items-center gap-2 text-center text-xs font-black uppercase tracking-[0.12em] text-white sm:flex sm:w-fit sm:justify-end">
             <a href="#home" className="nav-link-hover">
               Home
             </a>
@@ -304,7 +323,6 @@ export default function PageHome() {
             <a href="#contact" className="nav-link-hover">
               Contact
             </a>
-            
           </div>
         </nav>
       </header>
@@ -322,39 +340,39 @@ export default function PageHome() {
         <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#ff7800] to-transparent opacity-80" />
         <div className="absolute inset-x-8 bottom-10 h-px bg-gradient-to-r from-transparent via-[#ff7800]/55 to-transparent" />
 
-        <section className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1.08fr)_minmax(120px,0.92fr)] items-center gap-1 px-0 py-8 text-left sm:gap-8 sm:px-8 sm:py-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-16">
+        <section className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-0 py-10 text-left sm:grid-cols-[minmax(0,1.08fr)_minmax(120px,0.92fr)] sm:gap-10 sm:px-8 sm:py-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:py-16">
           <div className="hero-name-aura" />
           <div className="hero-left-copy flex min-w-0 flex-col items-start text-left">
             <p className="hero-kicker mb-3 text-[10px] font-black uppercase tracking-[0.32em] text-white/78 sm:mb-5 sm:text-sm sm:tracking-[0.5em]">
               Hi, I am
             </p>
-            <h1 className="split-name-text max-w-5xl text-left text-[clamp(1.45rem,7vw,5.35rem)] font-black uppercase leading-[0.92]">
-              <span className="block sm:whitespace-nowrap">Sreeparvathy K A</span>
+            <h1 className="split-name-text max-w-5xl whitespace-nowrap text-left text-[clamp(1.25rem,6.4vw,5.35rem)] font-black uppercase leading-[0.92]">
+              <span className="block">Sreeparvathy K A</span>
             </h1>
-            <p className="mt-4 text-[10px] font-black uppercase tracking-[0.12em] text-[#ff7800] sm:mt-5 sm:text-lg sm:tracking-[0.28em]">
+            <p className="mt-5 text-[10px] font-black uppercase tracking-[0.12em] text-[#ff7800] sm:mt-6 sm:text-lg sm:tracking-[0.28em]">
               Full Stack Developer
             </p>
-            <p className="mt-4 max-w-xl text-[11px] font-semibold leading-5 text-white/78 sm:mt-6 sm:text-base sm:leading-7">
+            <p className="mt-5 max-w-xl text-[11px] font-semibold leading-5 text-white/78 sm:mt-7 sm:text-base sm:leading-7">
               I build responsive, modern web applications with clean interfaces, reliable APIs, and smooth user experiences using the MERN stack.
             </p>
-            <div className="mt-5 flex w-full flex-col items-start gap-2 sm:mt-8 sm:w-auto sm:flex-row sm:gap-4">
+            <div className="mt-7 grid w-full max-w-sm grid-cols-2 gap-4 sm:mt-10 sm:flex sm:w-auto sm:max-w-none sm:gap-5">
               <a
                 href="/Sreeparvathy-K-A-CV.pdf"
                 download
-                className="inline-flex items-center justify-center rounded-full bg-[#ff7800] px-3 py-2 text-[8px] font-black uppercase tracking-[0.1em] text-black shadow-[0_0_28px_rgba(255,120,0,0.22)] transition hover:-translate-y-1 hover:bg-white hover:text-black sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.18em]"
+                className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full bg-[#ff7800] px-4 py-3 text-[9px] font-black uppercase tracking-[0.08em] text-black shadow-[0_8px_24px_rgba(255,120,0,0.22)] transition hover:-translate-y-1 hover:bg-white hover:text-black sm:px-6 sm:text-xs sm:tracking-[0.18em]"
               >
                 Download CV
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/55 px-3 py-2 text-[8px] font-black uppercase tracking-[0.1em] text-white transition hover:-translate-y-1 hover:border-[#ff7800] hover:bg-[#ff7800] hover:text-black sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.18em]"
+                className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full bg-[#101010] px-4 py-3 text-[9px] font-black uppercase tracking-[0.08em] text-white shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition hover:-translate-y-1 hover:bg-black hover:text-[#ff7800] sm:px-6 sm:text-xs sm:tracking-[0.18em]"
               >
                 Contact Me
               </a>
             </div>
           </div>
 
-          <div className="hero-right-copy flex -translate-y-4 translate-x-5 flex-col items-center sm:translate-x-16 sm:-translate-y-6 lg:translate-x-32 lg:-translate-y-10">
+          <div className="hero-right-copy flex min-h-[280px] -translate-y-20 flex-col items-center justify-center sm:-translate-y-6 sm:translate-x-16 lg:-translate-y-10 lg:translate-x-32">
             <HeroTechOrbit />
           </div>
         </section>
