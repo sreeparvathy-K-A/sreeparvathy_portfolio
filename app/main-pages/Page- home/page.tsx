@@ -1,4 +1,7 @@
-﻿const frontendSkills = [
+﻿"use client";
+import { motion } from "framer-motion";
+
+const frontendSkills = [
   ["React", "R"],
   ["Next.js", "N"],
   ["JavaScript", "JS"],
@@ -113,37 +116,6 @@ const heroTechIcons = [
   },
 ];
 
-function HeroTechOrbit() {
-  return (
-    <div className="hero-developer-visual" aria-label="Cartoon developer with glowing MERN oval halo above the head">
-      <div className="hero-tech-orbit">
-        <div className="hero-tech-ring">
-          {heroTechIcons.map((tech) => (
-            <span key={tech.name} className={`hero-tech-icon ${tech.className}`} title={tech.name}>
-              <span className="hero-tech-icon-inner">{tech.icon}</span>
-              <span className="sr-only">{tech.name}</span>
-            </span>
-          ))}
-        </div>
-      </div>
-      <div className="hero-cartoon" aria-hidden="true">
-        <div className="hero-cartoon-head">
-          <span className="hero-cartoon-hair" />
-          <span className="hero-cartoon-eye hero-cartoon-eye-left" />
-          <span className="hero-cartoon-eye hero-cartoon-eye-right" />
-          <span className="hero-cartoon-smile" />
-        </div>
-        <div className="hero-cartoon-body">
-          <span className="hero-cartoon-neck" />
-          <span className="hero-cartoon-leg hero-cartoon-leg-left" />
-          <span className="hero-cartoon-leg hero-cartoon-leg-right" />
-          <span className="hero-cartoon-laptop" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function SkillIcon({ name }: { name: string }) {
   const iconClassName = "h-9 w-9";
 
@@ -257,7 +229,7 @@ function SkillList({
   items: string[][];
 }) {
   return (
-    <div className="rounded-xl bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)] sm:p-6">
+    <div className="skill-group-card rounded-xl bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)] sm:p-6">
       <div className="border-b border-black/10 pb-5">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.28em] text-[#ff7800]">{title}</p>
@@ -287,18 +259,21 @@ function SkillList({
 export default function PageHome() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-black text-white">
-      <header className="fixed inset-x-0 top-0 z-50 px-3 py-3 sm:px-8 lg:px-12">
-        <nav className="mx-auto w-full max-w-7xl">
+      <header className="portfolio-header absolute inset-x-0 top-0 px-3 py-3 sm:px-8 lg:px-12">
+        <nav className="portfolio-nav mx-auto flex w-full max-w-7xl items-center justify-between">
+          <a href="#home" className="portfolio-brand" aria-label="Sreeparvathy home">
+            Sreeparvathy<span>.</span>
+          </a>
           <details className="mobile-nav relative ml-auto w-fit sm:hidden">
             <summary
-              className="flex h-9 w-9 cursor-pointer list-none flex-col items-center justify-center gap-1 rounded-md border border-white/40 bg-black/30 backdrop-blur-sm"
+              className="mobile-nav-button flex h-10 w-10 cursor-pointer list-none flex-col items-center justify-center gap-1.5 rounded-lg"
               aria-label="Open navigation menu"
             >
-              <span className="h-0.5 w-4 rounded-full bg-white" />
-              <span className="h-0.5 w-4 rounded-full bg-white" />
-              <span className="h-0.5 w-4 rounded-full bg-white" />
+              <span />
+              <span />
+              <span />
             </summary>
-            <div className="absolute right-0 top-11 grid min-w-32 overflow-hidden rounded-md border border-white/20 bg-[#101010]/95 p-1 text-[10px] font-black uppercase tracking-[0.1em] text-white shadow-xl backdrop-blur">
+            <div className="mobile-nav-panel absolute right-0 top-12 grid min-w-40 overflow-hidden rounded-xl p-2 text-[11px] font-bold uppercase tracking-[0.1em]">
               <a href="#home" className="nav-link-hover">Home</a>
               <a href="#about" className="nav-link-hover">About</a>
               <a href="#skills" className="nav-link-hover">Skills</a>
@@ -307,7 +282,7 @@ export default function PageHome() {
             </div>
           </details>
 
-          <div className="nav-menu-panel ml-auto hidden items-center gap-2 text-center text-xs font-black uppercase tracking-[0.12em] text-white sm:flex sm:w-fit sm:justify-end">
+          <div className="nav-menu-panel ml-auto hidden items-center gap-4 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-[#15110e] sm:flex sm:w-fit sm:justify-end">
             <a href="#home" className="nav-link-hover">
               Home
             </a>
@@ -320,61 +295,63 @@ export default function PageHome() {
             <a href="#projects" className="nav-link-hover">
               Projects
             </a>
-            <a href="#contact" className="nav-link-hover">
-              Contact
+            <a href="#experience" className="nav-link-hover">
+              Experience
             </a>
+           
           </div>
+          <a href="#contact" className="nav-contact-cta hidden sm:inline-flex">
+            Contact Me
+          </a>
         </nav>
       </header>
 
       <main
         id="home"
-        className="relative flex min-h-[100svh] scroll-mt-24 items-center justify-center overflow-hidden bg-[#030303] px-4 pb-16 pt-32 text-center sm:px-8 sm:pb-24 sm:pt-36 lg:px-10"
+        className="hero-photo-layout relative flex min-h-[100svh] scroll-mt-24 items-center justify-center overflow-hidden px-4 pb-16 pt-32 text-center sm:px-8 sm:pb-24 sm:pt-36 lg:px-10"
       >
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-black" />
-        <div className="hero-orange-half absolute inset-y-0 right-0 w-1/2 bg-[#ff7800]" />
-        <div className="hero-grid absolute inset-0 opacity-25" />
-        <div className="hero-orbit hero-orbit-one" />
-        <div className="hero-orbit hero-orbit-two" />
-        <div className="hero-split-line absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/25" />
-        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#ff7800] to-transparent opacity-80" />
-        <div className="absolute inset-x-8 bottom-10 h-px bg-gradient-to-r from-transparent via-[#ff7800]/55 to-transparent" />
+        <div className="hero-grid absolute inset-0 opacity-15" />
 
-        <section className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-0 py-10 text-left sm:grid-cols-[minmax(0,1.08fr)_minmax(120px,0.92fr)] sm:gap-10 sm:px-8 sm:py-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14 lg:py-16">
+        <section className="hero-layout hero-reference-layout relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-0 py-8 text-left sm:px-8 sm:py-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-12">
           <div className="hero-name-aura" />
-          <div className="hero-left-copy flex min-w-0 max-w-2xl flex-col items-start text-left">
-            <p className="hero-kicker mb-4 text-[10px] font-black uppercase tracking-[0.32em] text-white/78 sm:mb-5 sm:text-sm sm:tracking-[0.5em]">
+          <motion.div
+            className="hero-left-copy hero-content-card hero-reference-copy flex min-w-0 max-w-4xl flex-col items-start text-left"
+            initial={{ opacity: 0, x: -36 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="hero-kicker mb-4 text-[10px] font-black uppercase tracking-[0.24em] sm:mb-5 sm:text-xs sm:tracking-[0.32em]">
               Hi, I am
             </p>
-            <h1 className="split-name-text max-w-5xl whitespace-nowrap text-left text-[clamp(1.2rem,6.1vw,5rem)] font-black uppercase leading-none">
-              <span className="block">Sreeparvathy K A</span>
+            <h1 className="reference-hero-title max-w-3xl text-left font-extrabold">
+              SREEPARVATHY K A
             </h1>
-            <p className="ml-2 mt-6 text-[11px] font-black uppercase tracking-[0.18em] text-[#ff7800] sm:ml-4 sm:mt-7 sm:text-lg sm:tracking-[0.28em]">
-              Full Stack Developer
+            <h2 className="reference-hero-role w-full text-center">Full Stack Developer</h2>
+            <p className="mt-6 max-w-2xl text-[12px] font-medium leading-6 text-white/75 sm:text-base sm:leading-7">
+              MCA graduate and MERN Stack Developer focused on building responsive web applications, RESTful APIs, and modern user experiences using React, Node.js, Express.js, and MongoDB.
             </p>
-            <p className="ml-2 mt-4 max-w-xl text-[12px] font-medium leading-6 text-white/78 sm:ml-4 sm:mt-5 sm:text-base sm:leading-7">
-              I build responsive, modern web applications with clean interfaces, reliable APIs, and smooth user experiences using the MERN stack.
-            </p>
-            <div className="mt-7 grid w-full max-w-sm grid-cols-2 gap-4 sm:mt-8 sm:flex sm:w-auto sm:max-w-none sm:gap-5">
+            <div className="hero-actions mt-7 w-full max-w-sm sm:mt-8 sm:w-auto sm:max-w-none">
               <a
                 href="/Sreeparvathy-K-A-CV.pdf"
                 download
-                className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full bg-[#ff7800] px-4 py-3 text-[9px] font-black uppercase tracking-[0.08em] text-black shadow-[0_8px_24px_rgba(255,120,0,0.22)] transition hover:-translate-y-1 hover:bg-white hover:text-black sm:px-6 sm:text-xs sm:tracking-[0.18em]"
+                className="hero-primary-cta inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-xl bg-[#ff7800] px-5 py-3 text-[9px] font-black uppercase tracking-[0.08em] text-black transition sm:px-6 sm:text-xs sm:tracking-[0.14em]"
               >
-                Download CV
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full bg-[#101010] px-4 py-3 text-[9px] font-black uppercase tracking-[0.08em] text-white shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition hover:-translate-y-1 hover:bg-black hover:text-[#ff7800] sm:px-6 sm:text-xs sm:tracking-[0.18em]"
-              >
-                Contact Me
+                Download Resume <span aria-hidden="true">↓</span>
               </a>
             </div>
-          </div>
+          </motion.div>
+          <motion.div
+            className="hero-photo-wrap hero-reference-photo"
+            aria-label="Portrait of Sreeparvathy K A"
+            initial={{ opacity: 0, scale: 0.92, x: 30 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="hero-photo-lines" aria-hidden="true" />
+            <div className="hero-photo-glow" aria-hidden="true" />
+            <div className="hero-photo-frame" />
+          </motion.div>
 
-          <div className="hero-right-copy flex min-h-[280px] -translate-y-20 flex-col items-center justify-center sm:-translate-y-6 sm:translate-x-16 lg:-translate-y-10 lg:translate-x-32">
-            <HeroTechOrbit />
-          </div>
         </section>
 
         <a
@@ -385,9 +362,9 @@ export default function PageHome() {
         </a>
       </main>
 
-      <section id="about" className="scroll-mt-24 border-t border-[#ff7800]/20 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-20 lg:px-24 lg:py-24">
+      <section id="about" className="portfolio-section reveal-section scroll-mt-24 border-t border-[#ff7800]/20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
         <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start lg:gap-16">
-          <div>
+          <div className="section-copy">
             <div className="flex items-center gap-5">
               <p className="text-xs font-black uppercase tracking-[0.42em] text-[#ff7800]">Get To Know Me</p>
               <span className="h-px w-20 bg-[#ff7800]/70" />
@@ -419,7 +396,7 @@ export default function PageHome() {
             </div>
           </div>
 
-          <aside className="w-full rounded-xl border border-black/5 bg-[#f7f7f7] p-5 shadow-[0_14px_32px_rgba(0,0,0,0.07)] sm:p-6 lg:justify-self-end">
+          <aside className="quick-info-card w-full rounded-xl border border-black/5 bg-[#f7f7f7] p-5 shadow-[0_14px_32px_rgba(0,0,0,0.07)] sm:p-6 lg:justify-self-end">
             <div className="flex items-center gap-4">
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Quick Info</p>
               <span className="h-px flex-1 bg-[#ff7800]/50" />
@@ -443,24 +420,22 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="skills" className="scroll-mt-24 bg-[#f7f7f7] px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
+      <section id="skills" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <div className="flex items-center gap-5">
-                <p className="text-xs font-black uppercase tracking-[0.42em] text-[#ff7800]">Core Skills</p>
-                <span className="h-px w-24 bg-[#ff7800]/70" />
+               
+                
               </div>
               <h2 className="mt-5 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">
                 Skills &amp; <span className="text-[#ff7800]">Technologies</span>
               </h2>
             </div>
-            <p className="max-w-2xl text-sm leading-7 text-[#53606c] lg:justify-self-end">
-              A focused set of tools I use to build clean interfaces, connect APIs, manage databases, test requests, and ship full-stack web applications.
-            </p>
+           
           </div>
 
-          <div className="mt-9 grid items-start gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="skills-showcase mt-10 grid items-start gap-5 sm:grid-cols-2 xl:grid-cols-4">
             <SkillList
               title="Frontend"
               description="Interfaces, layouts, styling, browser behavior, and design handoff."
@@ -485,20 +460,20 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="projects" className="scroll-mt-24 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
+      <section id="projects" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
         <div className="mx-auto max-w-[1400px]">
           <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[0.05em] text-[#ff7800] sm:text-5xl">
             Projects
           </h2>
 
-          <div className="mt-10 grid gap-6">
+          <div className="projects-showcase mt-12 grid gap-8">
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group grid w-full max-w-4xl overflow-hidden rounded-xl bg-white shadow-[0_18px_40px_rgba(0,0,0,0.1)] ring-1 ring-black/5 transition hover:-translate-y-1 md:grid-cols-[0.82fr_1.18fr]"
+                className="project-showcase-card group grid w-full overflow-hidden rounded-xl bg-white shadow-[0_18px_40px_rgba(0,0,0,0.1)] ring-1 ring-black/5 transition hover:-translate-y-1 md:grid-cols-[1.05fr_0.95fr]"
               >
                 <div
-                  className="project-card-visual relative flex min-h-[210px] items-center justify-center overflow-hidden bg-cover bg-center px-6 py-8 text-center text-white"
+                  className="project-card-visual relative flex min-h-[280px] items-center justify-center overflow-hidden bg-cover bg-center px-6 py-8 text-center text-white md:min-h-[360px]"
                   style={{ backgroundImage: `url("${project.image}")` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/15 transition group-hover:via-black/40" />
@@ -560,7 +535,7 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="experience" className="scroll-mt-16 bg-[#f7f7f7] px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
+      <section id="experience" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
         <div className="mx-auto max-w-[1400px]">
           <div className="flex items-center gap-5">
             <h2 className="text-4xl font-black uppercase leading-[0.9] text-[#101010] sm:text-5xl">
@@ -570,7 +545,7 @@ export default function PageHome() {
             <span className="h-px w-20 bg-[#ff7800]/70" />
           </div>
           <div className="mt-8 max-w-4xl">
-            <article className="rounded-xl border-l-4 border-[#ff7800] bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.08)] sm:p-7">
+            <article className="experience-card rounded-xl border-l-4 border-[#ff7800] bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.08)] sm:p-8">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h3 className="text-2xl font-black text-[#101010]">MERN Stack Developer Intern</h3>
@@ -586,7 +561,7 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="education" className="scroll-mt-16 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
+      <section id="education" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
@@ -647,11 +622,11 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="certificates" className="scroll-mt-16 bg-[#f7f7f7] px-5 py-14 text-[#101010] sm:px-10 sm:py-20 lg:px-24 lg:py-28">
+      <section id="certificates" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
         <div className="mx-auto max-w-[1400px]">
-          <h2 className="text-4xl font-black uppercase leading-[0.95] text-[#ff7800] sm:text-5xl">Certifications</h2>
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <article className="relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+          <h2 className="reference-cert-title">Certifications</h2>
+          <div className="certification-grid mt-14 grid gap-8 md:grid-cols-2">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued May 2026</p>
               <h3 className="mt-4 text-2xl font-black text-[#101010]">Certified MERN Stack Developer</h3>
@@ -666,7 +641,7 @@ export default function PageHome() {
                 View Certificate
               </a>
             </article>
-            <article className="relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Feb 2026</p>
               <h3 className="mt-4 text-2xl font-black text-[#101010]">Software Engineering</h3>
@@ -681,7 +656,7 @@ export default function PageHome() {
                 View Certificate
               </a>
             </article>
-            <article className="relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Dec 2025</p>
               <h3 className="mt-4 text-2xl font-black text-[#101010]">Web Design &amp; Development</h3>
@@ -695,7 +670,7 @@ export default function PageHome() {
                 View Certificate
               </a>
             </article>
-            <article className="relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Mar 2025</p>
               <h3 className="mt-4 text-2xl font-black text-[#101010]">Software Testing</h3>
@@ -713,12 +688,14 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="contact" className="scroll-mt-24 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-20 lg:px-24 lg:py-24">
+      <section id="contact" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
         <div className="mx-auto max-w-[1400px] text-center">
-          <h2 className="text-4xl font-black leading-[0.95] text-[#101010] sm:text-5xl">Get in Touch</h2>
-          <p className="mt-5 text-base font-medium text-[#53606c] sm:text-lg">Let&apos;s turn ideas into reality together.</p>
+          <div className="contact-heading reference-contact-heading">
+            <h2>Get in Touch</h2>
+            <span>Let&apos;s turn ideas into reality together.</span>
+          </div>
 
-          <div className="mt-12 grid gap-10 sm:mt-16 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+          <div className="contact-grid reference-contact-grid mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <a href="https://github.com/sreeparvathy-K-A" target="_blank" rel="noreferrer" className="contact-social group">
               <span className="contact-social-icon">
                 <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -757,7 +734,7 @@ export default function PageHome() {
             </div>
           </div>
 
-          <p className="mt-24 text-sm text-[#53606c]">© 2026 Sreeparvathy K A. All rights reserved.</p>
+          <p className="contact-footer mt-16 text-sm text-[#53606c]">© 2026 Sreeparvathy K A. All rights reserved.</p>
         </div>
       </section>
     </div>
