@@ -29,13 +29,31 @@ const projects = [
   {
     number: "01",
     label: "SHOP",
-    type: "Full Stack",
+    visualTitle: "Nutricart",
+    image: "/images/Nutricart-project.jpg",
+    type: "MERN Full Stack",
     title: "Nutricart-E-Commerce Platform",
+    date: "",
     description:
-      "A complete online shopping experience with product catalog, cart management, user authentication, and Stripe payment.",
-    techStack: ["React", "Node.js", "Express.js", "MongoDB", "Stripe"],
+      "A complete online shopping experience with product catalog, cart management, user authentication, and a responsive checkout flow.",
+    techStack: ["React", "Node.js", "Express.js", "MongoDB"],
     githubUrl: "https://github.com/sreeparvathy-K-A/Nutricart",
     liveUrl: "",
+  },
+  {
+    number: "02",
+    label: "LEGAL",
+    visualTitle: "CaseMate",
+    image: "/images/casemate.jpg",
+    type: "Python Full Stack",
+    title: "CaseMate — Legal Case Management Web Application",
+    date: "Jan 2025 – Mar 2025",
+    description:
+      "A legal case management platform for clients and advocates, featuring secure registration and login, role-based access, case detail management, appointment scheduling, and communication tools.",
+    techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "Bootstrap", "MySQL"],
+    githubUrl: "https://github.com/sreeparvathy-K-A/CaseMate",
+    liveUrl: "",
+    hideLiveLink: true,
   },
 ];
 
@@ -250,9 +268,8 @@ function SkillList({
         {items.map(([skill]) => (
           <article
             key={skill}
-            className="group relative overflow-hidden rounded-lg bg-[#f7f7f7] p-4 transition hover:-translate-y-1 hover:bg-white hover:shadow-[0_14px_30px_rgba(0,0,0,0.08)]"
+            className="group rounded-lg border border-black/5 bg-[#f7f7f7] p-4 transition hover:-translate-y-1 hover:border-[#ff7800]/25 hover:bg-white hover:shadow-[0_14px_30px_rgba(0,0,0,0.08)]"
           >
-            <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800] opacity-70 transition group-hover:opacity-100" />
             <div className="flex items-center gap-3">
               <span className="skill-card-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#101010] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]">
                 <SkillIcon name={skill} />
@@ -268,10 +285,10 @@ function SkillList({
 
 export default function PageHome() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <header className="absolute inset-x-0 top-0 z-30 px-5 py-5 sm:px-8 lg:px-12">
-        <nav className="mx-auto flex w-full max-w-6xl items-center justify-between gap-5 px-1 py-2">
-          <div className="ml-auto flex flex-wrap items-center justify-end gap-x-4 gap-y-3 text-xs font-black uppercase tracking-[0.14em] text-white/72 sm:gap-x-5">
+    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+      <header className="fixed inset-x-0 top-0 z-50 px-3 py-2 sm:px-8 sm:py-3 lg:px-12">
+        <nav className="mx-auto w-full max-w-7xl">
+          <div className="grid grid-cols-5 items-center gap-1 text-center text-[9px] font-black uppercase tracking-[0.04em] text-white sm:flex sm:justify-end sm:gap-4 sm:text-xs sm:tracking-[0.12em]">
             <a href="#home" className="nav-link-hover">
               Home
             </a>
@@ -284,22 +301,17 @@ export default function PageHome() {
             <a href="#projects" className="nav-link-hover">
               Projects
             </a>
-            <a href="#experience" className="nav-link-hover">
-              Experience
-            </a>
-            <a
-              href="#contact"
-              className="bg-[#ff7800] px-4 py-2 text-black transition hover:-translate-y-0.5 hover:bg-white"
-            >
+            <a href="#contact" className="nav-link-hover">
               Contact
             </a>
+            
           </div>
         </nav>
       </header>
 
       <main
         id="home"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#030303] px-6 py-32 text-center sm:px-10"
+        className="relative flex min-h-[100svh] scroll-mt-24 items-center justify-center overflow-hidden bg-[#030303] px-4 pb-16 pt-32 text-center sm:px-8 sm:pb-24 sm:pt-36 lg:px-10"
       >
         <div className="absolute inset-y-0 left-0 w-1/2 bg-black" />
         <div className="hero-orange-half absolute inset-y-0 right-0 w-1/2 bg-[#ff7800]" />
@@ -310,39 +322,39 @@ export default function PageHome() {
         <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#ff7800] to-transparent opacity-80" />
         <div className="absolute inset-x-8 bottom-10 h-px bg-gradient-to-r from-transparent via-[#ff7800]/55 to-transparent" />
 
-        <section className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-2 py-12 text-left sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:py-16">
+        <section className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-[minmax(0,1.08fr)_minmax(120px,0.92fr)] items-center gap-1 px-0 py-8 text-left sm:gap-8 sm:px-8 sm:py-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10 lg:py-16">
           <div className="hero-name-aura" />
-          <div className="hero-left-copy flex flex-col items-center text-center lg:items-start lg:text-left">
-            <p className="hero-kicker mb-5 text-xs font-black uppercase tracking-[0.5em] text-white/78 sm:text-sm">
+          <div className="hero-left-copy flex min-w-0 flex-col items-start text-left">
+            <p className="hero-kicker mb-3 text-[10px] font-black uppercase tracking-[0.32em] text-white/78 sm:mb-5 sm:text-sm sm:tracking-[0.5em]">
               Hi, I am
             </p>
-            <h1 className="split-name-text max-w-5xl text-center text-[clamp(2rem,7vw,5.35rem)] font-black uppercase leading-[0.92] lg:text-left">
-              <span className="block whitespace-nowrap">Sreeparvathy K A</span>
+            <h1 className="split-name-text max-w-5xl text-left text-[clamp(1.45rem,7vw,5.35rem)] font-black uppercase leading-[0.92]">
+              <span className="block sm:whitespace-nowrap">Sreeparvathy K A</span>
             </h1>
-            <p className="mt-5 text-sm font-black uppercase tracking-[0.28em] text-[#ff7800] sm:text-lg">
+            <p className="mt-4 text-[10px] font-black uppercase tracking-[0.12em] text-[#ff7800] sm:mt-5 sm:text-lg sm:tracking-[0.28em]">
               Full Stack Developer
             </p>
-            <p className="mt-6 max-w-xl text-sm font-semibold leading-7 text-white/78 sm:text-base">
+            <p className="mt-4 max-w-xl text-[11px] font-semibold leading-5 text-white/78 sm:mt-6 sm:text-base sm:leading-7">
               I build responsive, modern web applications with clean interfaces, reliable APIs, and smooth user experiences using the MERN stack.
             </p>
-            <div className="mt-8 flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row lg:justify-start">
+            <div className="mt-5 flex w-full flex-col items-start gap-2 sm:mt-8 sm:w-auto sm:flex-row sm:gap-4">
               <a
                 href="/Sreeparvathy-K-A-CV.pdf"
                 download
-                className="inline-flex items-center justify-center rounded-full bg-[#ff7800] px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-black shadow-[0_0_28px_rgba(255,120,0,0.22)] transition hover:-translate-y-1 hover:bg-white hover:text-black"
+                className="inline-flex items-center justify-center rounded-full bg-[#ff7800] px-3 py-2 text-[8px] font-black uppercase tracking-[0.1em] text-black shadow-[0_0_28px_rgba(255,120,0,0.22)] transition hover:-translate-y-1 hover:bg-white hover:text-black sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.18em]"
               >
                 Download CV
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/55 px-6 py-3 text-xs font-black uppercase tracking-[0.18em] text-white transition hover:-translate-y-1 hover:border-[#ff7800] hover:bg-[#ff7800] hover:text-black"
+                className="inline-flex items-center justify-center rounded-full border border-white/55 px-3 py-2 text-[8px] font-black uppercase tracking-[0.1em] text-white transition hover:-translate-y-1 hover:border-[#ff7800] hover:bg-[#ff7800] hover:text-black sm:px-6 sm:py-3 sm:text-xs sm:tracking-[0.18em]"
               >
                 Contact Me
               </a>
             </div>
           </div>
 
-          <div className="hero-right-copy flex flex-col items-center">
+          <div className="hero-right-copy flex -translate-y-4 translate-x-5 flex-col items-center sm:translate-x-16 sm:-translate-y-6 lg:translate-x-32 lg:-translate-y-10">
             <HeroTechOrbit />
           </div>
         </section>
@@ -355,17 +367,17 @@ export default function PageHome() {
         </a>
       </main>
 
-      <section id="about" className="border-t border-[#ff7800]/20 bg-white px-8 py-20 text-[#101010] sm:px-16 lg:px-24 lg:py-28">
-        <div className="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <section id="about" className="scroll-mt-24 border-t border-[#ff7800]/20 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-20 lg:px-24 lg:py-24">
+        <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start lg:gap-16">
           <div>
             <div className="flex items-center gap-5">
-              <p className="text-sm font-black uppercase tracking-[0.5em] text-[#ff7800]">About Me</p>
+              <p className="text-xs font-black uppercase tracking-[0.42em] text-[#ff7800]">Get To Know Me</p>
               <span className="h-px w-20 bg-[#ff7800]/70" />
             </div>
-            <h2 className="mt-5 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">
-              Who Am <span className="text-[#ff7800]">I?</span>
+            <h2 className="mt-4 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">
+              About <span className="text-[#ff7800]">Me</span>
             </h2>
-            <div className="mt-8 max-w-2xl space-y-6 text-base leading-8 text-[#53606c] sm:text-lg sm:leading-9">
+            <div className="mt-7 max-w-3xl space-y-4 text-base leading-8 text-[#53606c]">
               <p>
                 Hi! I&apos;m <span className="font-black text-[#101010]">Sreeparvathy K A</span>, a MERN Stack Developer and MCA graduate from Kottayam, Kerala. I build responsive, user-friendly web applications with clean interfaces and reliable backend logic.
               </p>
@@ -373,47 +385,47 @@ export default function PageHome() {
                 I have hands-on experience with MongoDB, Express.js, React.js, Node.js, JavaScript, HTML, CSS, and MySQL. I&apos;m eager to contribute to real-world projects, collaborate with teams, and keep growing as a software developer.
               </p>
             </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-lg border-l-4 border-[#ff7800] bg-[#f7f7f7] px-5 py-4">
-                <p className="text-2xl font-black text-[#101010]">MERN</p>
+            <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
+              <div className="rounded-lg border border-black/5 border-l-4 border-l-[#ff7800] bg-[#f7f7f7] px-4 py-3">
+                <p className="text-xl font-black text-[#101010]">MERN</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.22em] text-[#53606c]">Stack Focus</p>
               </div>
-              <div className="rounded-lg border-l-4 border-[#ff7800] bg-[#f7f7f7] px-5 py-4">
-                <p className="text-2xl font-black text-[#101010]">Fresher</p>
+              <div className="rounded-lg border border-black/5 border-l-4 border-l-[#ff7800] bg-[#f7f7f7] px-4 py-3">
+                <p className="text-xl font-black text-[#101010]">Fresher</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.22em] text-[#53606c]">Open To Work</p>
               </div>
-              <div className="rounded-lg border-l-4 border-[#ff7800] bg-[#f7f7f7] px-5 py-4">
-                <p className="text-2xl font-black text-[#101010]">Full Stack</p>
+              <div className="rounded-lg border border-black/5 border-l-4 border-l-[#ff7800] bg-[#f7f7f7] px-4 py-3">
+                <p className="text-xl font-black text-[#101010]">Full Stack</p>
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.22em] text-[#53606c]">Developer</p>
               </div>
             </div>
           </div>
 
-          <div className="rounded-xl bg-[#f7f7f7] px-6 py-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)] sm:px-8 lg:px-10">
-            <div className="flex items-center gap-5">
-              <p className="text-sm font-black uppercase tracking-[0.5em] text-[#ff7800]">Quick Info</p>
-              <span className="h-px w-20 bg-[#ff7800]/70" />
+          <aside className="w-full rounded-xl border border-black/5 bg-[#f7f7f7] p-5 shadow-[0_14px_32px_rgba(0,0,0,0.07)] sm:p-6 lg:justify-self-end">
+            <div className="flex items-center gap-4">
+              <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Quick Info</p>
+              <span className="h-px flex-1 bg-[#ff7800]/50" />
             </div>
-            <div className="mt-8 divide-y divide-black/10">
+            <div className="mt-4 divide-y divide-black/10">
               {quickInfo.map(([label, value]) => (
-                <div key={label} className="grid gap-2 py-5 sm:grid-cols-[150px_1fr] sm:items-center">
-                  <p className="text-xs font-black uppercase tracking-[0.3em] text-[#ff7800]">{label}</p>
-                  <p className="text-base leading-7 text-[#101010] sm:text-lg">{value}</p>
+                <div key={label} className="grid gap-1 py-3 sm:grid-cols-[105px_1fr] sm:items-center">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#ff7800]">{label}</p>
+                  <p className="break-words text-sm leading-6 text-[#101010]">{value}</p>
                 </div>
               ))}
-              <div className="grid gap-2 py-5 sm:grid-cols-[150px_1fr] sm:items-center">
-                <p className="text-xs font-black uppercase tracking-[0.3em] text-[#ff7800]">Status</p>
-                <p className="flex items-center gap-2 text-base font-semibold text-emerald-400 sm:text-lg">
+              <div className="grid gap-1 py-3 sm:grid-cols-[105px_1fr] sm:items-center">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#ff7800]">Status</p>
+                <p className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
                   <span className="h-2 w-2 rounded-full bg-emerald-400" />
                   Open to Work
                 </p>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section id="skills" className="bg-[#f7f7f7] px-8 py-16 text-[#101010] sm:px-16 lg:px-24 lg:py-20">
+      <section id="skills" className="scroll-mt-24 bg-[#f7f7f7] px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
@@ -430,7 +442,7 @@ export default function PageHome() {
             </p>
           </div>
 
-          <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-9 grid items-start gap-5 sm:grid-cols-2 xl:grid-cols-4">
             <SkillList
               title="Frontend"
               description="Interfaces, layouts, styling, browser behavior, and design handoff."
@@ -455,34 +467,41 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="projects" className="bg-white px-8 py-16 text-[#101010] sm:px-16 lg:px-24 lg:py-20">
-        <div className="mx-auto max-w-[1160px]">
-          <h2 className="text-center text-4xl font-black uppercase leading-[0.95] tracking-[0.06em] text-[#101010] sm:text-5xl">
+      <section id="projects" className="scroll-mt-24 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
+        <div className="mx-auto max-w-[1400px]">
+          <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[0.05em] text-[#ff7800] sm:text-5xl">
             Projects
           </h2>
 
-          <div className="mt-12">
+          <div className="mt-10 grid gap-6">
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group mx-auto grid max-w-5xl overflow-hidden rounded-2xl bg-white shadow-[0_22px_48px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition hover:-translate-y-1 lg:grid-cols-[0.92fr_1.08fr]"
+                className="group grid w-full max-w-4xl overflow-hidden rounded-xl bg-white shadow-[0_18px_40px_rgba(0,0,0,0.1)] ring-1 ring-black/5 transition hover:-translate-y-1 md:grid-cols-[0.82fr_1.18fr]"
               >
-                <div className="project-card-visual flex min-h-[280px] items-center justify-center bg-[#090909] px-8 py-12 text-center text-white sm:px-10">
-                  <div className="w-full">
+                <div
+                  className="project-card-visual relative flex min-h-[210px] items-center justify-center overflow-hidden bg-cover bg-center px-6 py-8 text-center text-white"
+                  style={{ backgroundImage: `url("${project.image}")` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/15 transition group-hover:via-black/40" />
+                  <div className="relative z-10 w-full">
                     <p className="text-xs font-black uppercase tracking-[0.38em] text-[#ff7800]">{project.type}</p>
-                    <p className="mt-5 text-5xl font-black uppercase tracking-[0.16em] text-white sm:text-6xl">{project.label}</p>
-                    <div className="mx-auto mt-7 h-1 w-24 bg-[#ff7800]" />
-                    <p className="mt-7 text-sm font-bold uppercase tracking-[0.26em] text-white/45">Nutricart</p>
+                    <p className="mt-4 text-4xl font-black uppercase tracking-[0.14em] text-white">{project.label}</p>
+                    <div className="mx-auto mt-5 h-1 w-20 bg-[#ff7800]" />
+                    <p className="mt-5 text-xs font-bold uppercase tracking-[0.24em] text-white/60">{project.visualTitle}</p>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center p-7 sm:p-9 lg:p-10">
+                <div className="flex flex-col justify-center p-6 sm:p-7">
                   <div className="flex items-start justify-between gap-4">
-                    <h3 className="max-w-xl text-2xl font-black leading-tight text-[#101820] sm:text-3xl">{project.title}</h3>
+                    <h3 className="max-w-xl text-xl font-black leading-tight text-[#101820] sm:text-2xl">{project.title}</h3>
                     <span className="text-xs font-black uppercase tracking-[0.2em] text-[#ff7800]">{project.number}</span>
                   </div>
-                  <p className="mt-5 max-w-2xl text-sm leading-7 text-[#263444] sm:text-base">{project.description}</p>
+                  <p className="mt-4 max-w-2xl text-sm leading-6 text-[#263444]">{project.description}</p>
+                  {project.date && (
+                    <p className="mt-3 text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">{project.date}</p>
+                  )}
 
-                  <div className="mt-6">
+                  <div className="mt-5">
                     <p className="text-sm font-black text-[#101820]">Tech Stack:</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {project.techStack.map((tech) => (
@@ -493,14 +512,14 @@ export default function PageHome() {
                     </div>
                   </div>
 
-                  <div className="mt-7 flex flex-wrap gap-5 text-sm font-black">
+                  <div className="mt-5 flex flex-wrap gap-5 text-sm font-black">
                     {project.liveUrl ? (
                       <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-[#ff7800] transition hover:text-black">
                         Go Live →
                       </a>
-                    ) : (
+                    ) : !("hideLiveLink" in project && project.hideLiveLink) ? (
                       <span className="text-[#ff7800]/55">Go Live →</span>
-                    )}
+                    ) : null}
                     {project.githubUrl ? (
                       <a
                         href={project.githubUrl}
@@ -523,16 +542,15 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="experience" className="bg-[#f7f7f7] px-8 py-16 text-[#101010] sm:px-16 lg:px-24 lg:py-20">
+      <section id="experience" className="scroll-mt-16 bg-[#f7f7f7] px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
         <div className="mx-auto max-w-[1400px]">
           <div className="flex items-center gap-5">
-            <p className="text-xs font-black uppercase tracking-[0.42em] text-[#ff7800]">Work Experience</p>
+            <h2 className="text-4xl font-black uppercase leading-[0.9] text-[#101010] sm:text-5xl">
+              <span className="block">Work</span>
+              <span className="block text-[#ff7800]">Experience</span>
+            </h2>
             <span className="h-px w-20 bg-[#ff7800]/70" />
           </div>
-          <h2 className="mt-5 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">
-            Experience
-          </h2>
-
           <div className="mt-8 max-w-4xl">
             <article className="rounded-xl border-l-4 border-[#ff7800] bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.08)] sm:p-7">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -550,7 +568,7 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="education" className="bg-white px-8 py-16 text-[#101010] sm:px-16 lg:px-24 lg:py-20">
+      <section id="education" className="scroll-mt-16 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-20">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
@@ -572,9 +590,9 @@ export default function PageHome() {
                   <div className="mt-5 grid gap-4 sm:grid-cols-2">
                     <div>
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">College</p>
-                      <p className="mt-2 text-sm font-black leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu</p>
+                      <p className="mt-2 text-sm font-black leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu,Kottayam</p>
                     </div>
-                    <div>
+                    <div className="sm:pl-10 lg:pl-16">
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">University</p>
                       <p className="mt-2 text-sm font-black leading-7 text-[#101010]">Mahatma Gandhi University</p>
                     </div>
@@ -592,9 +610,9 @@ export default function PageHome() {
                   <div className="mt-5 grid gap-4 sm:grid-cols-2">
                     <div>
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">College</p>
-                      <p className="mt-2 text-sm font-black leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu</p>
+                      <p className="mt-2 text-sm font-black leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu,Kottayam</p>
                     </div>
-                    <div>
+                    <div className="sm:pl-10 lg:pl-16">
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">University</p>
                       <p className="mt-2 text-sm font-black leading-7 text-[#101010]">Mahatma Gandhi University</p>
                     </div>
@@ -611,10 +629,9 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="certificates" className="bg-[#f7f7f7] px-8 py-20 text-[#101010] sm:px-16 lg:px-24 lg:py-28">
+      <section id="certificates" className="scroll-mt-16 bg-[#f7f7f7] px-5 py-14 text-[#101010] sm:px-10 sm:py-20 lg:px-24 lg:py-28">
         <div className="mx-auto max-w-[1400px]">
-          <p className="text-sm font-black uppercase tracking-[0.42em] text-[#ff7800]">Certificates</p>
-          <h2 className="mt-5 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">Certifications</h2>
+          <h2 className="text-4xl font-black uppercase leading-[0.95] text-[#ff7800] sm:text-5xl">Certifications</h2>
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <article className="relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
@@ -678,12 +695,12 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="contact" className="bg-white px-8 py-20 text-[#101010] sm:px-16 lg:px-24 lg:py-24">
+      <section id="contact" className="scroll-mt-24 bg-white px-5 py-14 text-[#101010] sm:px-10 sm:py-20 lg:px-24 lg:py-24">
         <div className="mx-auto max-w-[1400px] text-center">
           <h2 className="text-4xl font-black leading-[0.95] text-[#101010] sm:text-5xl">Get in Touch</h2>
           <p className="mt-5 text-base font-medium text-[#53606c] sm:text-lg">Let&apos;s turn ideas into reality together.</p>
 
-          <div className="mt-20 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-10 sm:mt-16 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
             <a href="https://github.com/sreeparvathy-K-A" target="_blank" rel="noreferrer" className="contact-social group">
               <span className="contact-social-icon">
                 <svg viewBox="0 0 64 64" aria-hidden="true">
