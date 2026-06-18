@@ -258,7 +258,7 @@ function SkillList({
 
 export default function PageHome() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+    <div className="min-h-screen w-full bg-black text-white">
       <header className="portfolio-header absolute inset-x-0 top-0 px-3 py-3 sm:px-8 lg:px-12">
         <nav className="portfolio-nav mx-auto flex w-full max-w-7xl items-center justify-between">
           <a href="#home" className="portfolio-brand" aria-label="Sreeparvathy home">
@@ -308,7 +308,7 @@ export default function PageHome() {
 
       <main
         id="home"
-        className="hero-photo-layout relative flex min-h-[100svh] scroll-mt-24 items-center justify-center overflow-hidden px-4 pb-16 pt-32 text-center sm:px-8 sm:pb-24 sm:pt-36 lg:px-10"
+        className="hero-photo-layout relative flex min-h-[88svh] scroll-mt-24 items-center justify-center overflow-hidden px-4 pb-8 pt-32 text-center sm:px-8 sm:pb-12 sm:pt-36 lg:px-10"
       >
         <div className="hero-grid absolute inset-0 opacity-15" />
 
@@ -330,7 +330,7 @@ export default function PageHome() {
             <p className="mt-6 max-w-2xl text-[12px] font-medium leading-6 text-white/75 sm:text-base sm:leading-7">
               MCA graduate and MERN Stack Developer focused on building responsive web applications, RESTful APIs, and modern user experiences using React, Node.js, Express.js, and MongoDB.
             </p>
-            <div className="hero-actions mt-7 w-full max-w-sm sm:mt-8 sm:w-auto sm:max-w-none">
+            <div className="hero-actions mt-7 flex w-full justify-center sm:mt-8">
               <a
                 href="/Sreeparvathy-K-A-CV.pdf"
                 download
@@ -362,14 +362,14 @@ export default function PageHome() {
         </a>
       </main>
 
-      <section id="about" className="portfolio-section reveal-section scroll-mt-24 border-t border-[#ff7800]/20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
+      <section id="about" className="portfolio-section reveal-section scroll-mt-24 border-t border-[#ff7800]/20 bg-white px-5 py-10 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-15">
         <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start lg:gap-16">
           <div className="section-copy">
             <div className="flex items-center gap-5">
               <p className="text-xs font-black uppercase tracking-[0.42em] text-[#ff7800]">Get To Know Me</p>
               <span className="h-px w-20 bg-[#ff7800]/70" />
             </div>
-            <h2 className="mt-4 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">
+            <h2 className="portfolio-section-heading mt-4">
               About <span className="text-[#ff7800]">Me</span>
             </h2>
             <div className="mt-7 max-w-3xl space-y-4 text-base leading-8 text-[#53606c]">
@@ -420,7 +420,7 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="skills" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
+      <section id="skills" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-10">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
@@ -428,7 +428,7 @@ export default function PageHome() {
                
                 
               </div>
-              <h2 className="mt-5 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">
+              <h2 className="portfolio-section-heading mt-5">
                 Skills &amp; <span className="text-[#ff7800]">Technologies</span>
               </h2>
             </div>
@@ -460,9 +460,9 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="projects" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
+      <section id="projects" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-12">
         <div className="mx-auto max-w-[1400px]">
-          <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[0.05em] text-[#ff7800] sm:text-5xl">
+          <h2 className="portfolio-section-heading text-[#ff7800]">
             Projects
           </h2>
 
@@ -535,14 +535,14 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="experience" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
+      <section id="experience" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-12">
         <div className="mx-auto max-w-[1400px]">
           <div className="flex items-center gap-5">
-            <h2 className="text-4xl font-black uppercase leading-[0.9] text-[#101010] sm:text-5xl">
+            <h2 className="portfolio-section-heading">
               <span className="block">Work</span>
               <span className="block text-[#ff7800]">Experience</span>
             </h2>
-            <span className="h-px w-20 bg-[#ff7800]/70" />
+            
           </div>
           <div className="mt-8 max-w-4xl">
             <article className="experience-card rounded-xl border-l-4 border-[#ff7800] bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.08)] sm:p-8">
@@ -561,21 +561,19 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="education" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
+      <section id="education" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-15">
         <div className="mx-auto max-w-[1400px]">
           <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
               <div className="flex items-center gap-5">
-                <p className="text-xs font-black uppercase tracking-[0.42em] text-[#ff7800]">Education</p>
-                <span className="h-px w-20 bg-[#ff7800]/70" />
+                <h2 className="portfolio-section-heading text-[#ff7800]">Education</h2>
+               
               </div>
-              <h2 className="mt-5 text-4xl font-black uppercase leading-[0.95] text-[#101010] sm:text-5xl">
-                Academic <span className="text-[#ff7800]">Background</span>
-              </h2>
+              
             </div>
           </div>
 
-          <div className="mt-12 rounded-2xl bg-[#f7f7f7] p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)] ring-1 ring-black/5 sm:p-8">
+          <div className="mt-12 rounded-2xl border-l-[6px] border-[#ff7800] bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)] ring-1 ring-black/5 sm:p-8">
             <div className="divide-y divide-black/10">
               <article className="grid gap-5 py-6 first:pt-0 last:pb-0 lg:grid-cols-[1fr_220px] lg:items-start">
                 <div>
@@ -622,21 +620,21 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="certificates" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
+      <section id="certificates" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-12">
         <div className="mx-auto max-w-[1400px]">
-          <h2 className="reference-cert-title">Certifications</h2>
+          <h2 className="portfolio-section-heading text-[#ff7800]">Certifications</h2>
           <div className="certification-grid mt-14 grid gap-8 md:grid-cols-2">
             <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued May 2026</p>
-              <h3 className="mt-4 text-2xl font-black text-[#101010]">Certified MERN Stack Developer</h3>
-              <p className="mt-3 text-sm font-semibold leading-7 text-[#53606c]">SMEC Technologies</p>
+              <h3 className="mt-4 text-xl font-black text-[#101010]">Certified MERN Stack Developer</h3>
+              <p className="mt-3 text-xs font-semibold leading-6 text-[#53606c]">SMEC Technologies</p>
               <p className="mt-4 text-xs font-black uppercase tracking-[0.18em] text-[#101010]">Credential ID: SMT69</p>
               <a
                 href="/images/mernstack_certifcate.jpeg"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-5 inline-flex text-sm font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
+                className="mt-5 inline-flex text-xs font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
               >
                 View Certificate
               </a>
@@ -644,14 +642,14 @@ export default function PageHome() {
             <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Feb 2026</p>
-              <h3 className="mt-4 text-2xl font-black text-[#101010]">Software Engineering</h3>
-              <p className="mt-3 text-sm font-semibold leading-7 text-[#53606c]">Saylor University</p>
+              <h3 className="mt-4 text-xl font-black text-[#101010]">Software Engineering</h3>
+              <p className="mt-3 text-xs font-semibold leading-6 text-[#53606c]">Saylor University</p>
               <p className="mt-4 text-xs font-black uppercase tracking-[0.18em] text-[#101010]">Credential ID: 6865094860SK</p>
               <a
                 href="https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1771849670/6865094860SK.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-5 inline-flex text-sm font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
+                className="mt-5 inline-flex text-xs font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
               >
                 View Certificate
               </a>
@@ -659,13 +657,13 @@ export default function PageHome() {
             <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Dec 2025</p>
-              <h3 className="mt-4 text-2xl font-black text-[#101010]">Web Design &amp; Development</h3>
-              <p className="mt-3 text-sm font-semibold leading-7 text-[#53606c]">National Skill Development Corporation</p>
+              <h3 className="mt-4 text-xl font-black text-[#101010]">Web Design &amp; Development</h3>
+              <p className="mt-3 text-xs font-semibold leading-6 text-[#53606c]">National Skill Development Corporation</p>
               <a
                 href="https://api-fe.skillindiadigital.gov.in/api/registry-course/getCertificatePresignedUrl/2025113049444639-0e985123-f259-488a-9a41-a316980ea081"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-5 inline-flex text-sm font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
+                className="mt-5 inline-flex text-xs font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
               >
                 View Certificate
               </a>
@@ -673,13 +671,13 @@ export default function PageHome() {
             <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Mar 2025</p>
-              <h3 className="mt-4 text-2xl font-black text-[#101010]">Software Testing</h3>
-              <p className="mt-3 text-sm font-semibold leading-7 text-[#53606c]">NPTEL</p>
+              <h3 className="mt-4 text-xl font-black text-[#101010]">Software Testing</h3>
+              <p className="mt-3 text-xs font-semibold leading-6 text-[#53606c]">NPTEL</p>
               <a
                 href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS66S43820051901390323"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-5 inline-flex text-sm font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
+                className="mt-5 inline-flex text-xs font-black uppercase tracking-[0.18em] text-[#ff7800] transition hover:text-[#101010]"
               >
                 View Certificate
               </a>
@@ -688,10 +686,10 @@ export default function PageHome() {
         </div>
       </section>
 
-      <section id="contact" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-28">
+      <section id="contact" className="portfolio-section reveal-section scroll-mt-24 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-12">
         <div className="mx-auto max-w-[1400px] text-center">
           <div className="contact-heading reference-contact-heading">
-            <h2>Get in Touch</h2>
+            <h2 className="portfolio-section-heading">Get in Touch</h2>
             <span>Let&apos;s turn ideas into reality together.</span>
           </div>
 
