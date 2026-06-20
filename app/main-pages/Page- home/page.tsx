@@ -36,12 +36,13 @@ const projects = [
     image: "/images/Nutricart-project.jpg",
     type: "MERN Full Stack",
     title: "Nutricart-E-Commerce Platform",
-    date: "",
+    date: "Feb 2026 – Mar 2026",
     description:
-      "A complete online shopping experience with product catalog, cart management, user authentication, and a responsive checkout flow.",
+      "A full-stack MERN platform for ordering healthy meals from restaurants and diet-focused kitchens. It features JWT-secured, role-based dashboards for admins, restaurant owners, users, and delivery partners; food browsing, cart management with dynamic pricing, menu and order administration, and real-time order tracking from placement through delivery.",
     techStack: ["React", "Node.js", "Express.js", "MongoDB"],
     githubUrl: "https://github.com/sreeparvathy-K-A/Nutricart",
-    liveUrl: "",
+    liveUrl: "https://nutricart.vercel.app/",
+    backendUrl: "https://nutricart-waly.onrender.com/",
   },
   {
     number: "02",
@@ -233,7 +234,7 @@ function SkillList({
       <div className="border-b border-black/10 pb-5">
         <div>
           <p className="text-xs font-black uppercase tracking-[0.28em] text-[#ff7800]">{title}</p>
-          <p className="mt-2 max-w-md text-sm leading-6 text-[#53606c]">{description}</p>
+          <p className="mt-2 max-w-md text-justify text-sm leading-6 text-[#53606c]">{description}</p>
         </div>
       </div>
 
@@ -332,7 +333,7 @@ export default function PageHome() {
             </p>
             <div className="hero-actions mt-7 flex w-full justify-center sm:mt-8">
               <a
-                href="/Sreeparvathy-K-A-CV.pdf"
+                href="/images/Sreeparvathy_KA_Resume.pdf"
                 download
                 className="hero-primary-cta inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-xl bg-[#ff7800] px-5 py-3 text-[9px] font-black uppercase tracking-[0.08em] text-black transition sm:px-6 sm:text-xs sm:tracking-[0.14em]"
               >
@@ -363,8 +364,8 @@ export default function PageHome() {
       </main>
 
       <section id="about" className="portfolio-section reveal-section scroll-mt-24 border-t border-[#ff7800]/20 bg-white px-5 py-10 text-[#101010] sm:px-10 sm:py-16 lg:px-24 lg:py-15">
-        <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start lg:gap-16">
-          <div className="section-copy">
+        <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center lg:gap-16">
+          <div className="section-copy text-left">
             <div className="flex items-center gap-5">
               <p className="text-xs font-black uppercase tracking-[0.42em] text-[#ff7800]">Get To Know Me</p>
               <span className="h-px w-20 bg-[#ff7800]/70" />
@@ -372,12 +373,12 @@ export default function PageHome() {
             <h2 className="portfolio-section-heading mt-4">
               About <span className="text-[#ff7800]">Me</span>
             </h2>
-            <div className="mt-7 max-w-3xl space-y-4 text-base leading-8 text-[#53606c]">
+            <div className="mt-7 max-w-3xl space-y-4 text-justify text-base leading-8 text-[#53606c]">
               <p>
-                Hi! I&apos;m <span className="font-black text-[#101010]">Sreeparvathy K A</span>, a MERN Stack Developer and MCA graduate from Kottayam, Kerala. I build responsive, user-friendly web applications with clean interfaces and reliable backend logic.
+                Hi! I&apos;m <span className="font-black text-[#101010]">Sreeparvathy K A</span>, a MERN Stack Developer and MCA graduate passionate about building complete, user-focused web applications—from RESTful APIs and database architecture to responsive, modern interfaces.
               </p>
               <p>
-                I have hands-on experience with MongoDB, Express.js, React.js, Node.js, JavaScript, HTML, CSS, and MySQL. I&apos;m eager to contribute to real-world projects, collaborate with teams, and keep growing as a software developer.
+                I work with MongoDB, Express.js, React.js, Node.js, and Next.js, along with MySQL and Tailwind CSS. I&apos;m currently seeking an entry-level developer role where I can contribute to meaningful projects, strengthen my skills, and grow alongside an experienced team.
               </p>
             </div>
             <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
@@ -396,7 +397,7 @@ export default function PageHome() {
             </div>
           </div>
 
-          <aside className="quick-info-card w-full rounded-xl border border-black/5 bg-[#f7f7f7] p-5 shadow-[0_14px_32px_rgba(0,0,0,0.07)] sm:p-6 lg:justify-self-end">
+          <aside className="quick-info-card w-full rounded-xl border border-black/5 bg-[#f7f7f7] p-5 text-left shadow-[0_14px_32px_rgba(0,0,0,0.07)] sm:p-6 lg:justify-self-end">
             <div className="flex items-center gap-4">
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Quick Info</p>
               <span className="h-px flex-1 bg-[#ff7800]/50" />
@@ -473,7 +474,7 @@ export default function PageHome() {
                 className="project-showcase-card group grid w-full overflow-hidden rounded-xl bg-white shadow-[0_18px_40px_rgba(0,0,0,0.1)] ring-1 ring-black/5 transition hover:-translate-y-1 md:grid-cols-[1.05fr_0.95fr]"
               >
                 <div
-                  className="project-card-visual relative flex min-h-[280px] items-center justify-center overflow-hidden bg-cover bg-center px-6 py-8 text-center text-white md:min-h-[360px]"
+                  className="project-card-visual relative flex min-h-[240px] items-center justify-center overflow-hidden bg-cover bg-center px-6 py-6 text-center text-white md:min-h-[300px]"
                   style={{ backgroundImage: `url("${project.image}")` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/15 transition group-hover:via-black/40" />
@@ -484,19 +485,19 @@ export default function PageHome() {
                     <p className="mt-5 text-xs font-bold uppercase tracking-[0.24em] text-white/60">{project.visualTitle}</p>
                   </div>
                 </div>
-                <div className="flex flex-col justify-center p-6 sm:p-7">
+                <div className="flex h-full flex-col p-5 text-left sm:p-6">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="max-w-xl text-xl font-black leading-tight text-[#101820] sm:text-2xl">{project.title}</h3>
                     <span className="text-xs font-black uppercase tracking-[0.2em] text-[#ff7800]">{project.number}</span>
                   </div>
-                  <p className="mt-4 max-w-2xl text-sm leading-6 text-[#263444]">{project.description}</p>
+                  <p className="mt-3 max-w-2xl text-justify text-sm leading-6 text-[#263444]">{project.description}</p>
                   {project.date && (
-                    <p className="mt-3 text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">{project.date}</p>
+                    <p className="mt-2 text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">{project.date}</p>
                   )}
 
-                  <div className="mt-5">
+                  <div className="mt-4">
                     <p className="text-sm font-black text-[#101820]">Tech Stack:</p>
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    <div className="mt-2 flex flex-wrap gap-2">
                       {project.techStack.map((tech) => (
                         <span key={tech} className="rounded-md bg-[#f2f2f2] px-3 py-2 text-xs font-bold text-[#101820]">
                           {tech}
@@ -505,13 +506,23 @@ export default function PageHome() {
                     </div>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-5 text-sm font-black">
+                  <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-4 text-sm font-black">
                     {project.liveUrl ? (
                       <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-[#ff7800] transition hover:text-black">
-                        Go Live →
+                        Frontend Live →
                       </a>
                     ) : !("hideLiveLink" in project && project.hideLiveLink) ? (
                       <span className="text-[#ff7800]/55">Go Live →</span>
+                    ) : null}
+                    {"backendUrl" in project && project.backendUrl ? (
+                      <a
+                        href={project.backendUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[#ff7800] transition hover:text-black"
+                      >
+                        Backend Live →
+                      </a>
                     ) : null}
                     {project.githubUrl ? (
                       <a
@@ -553,9 +564,12 @@ export default function PageHome() {
                 </div>
                 <p className="text-xs font-black uppercase tracking-[0.24em] text-[#53606c]">08/2025 - 03/2026</p>
               </div>
-              <p className="mt-5 max-w-3xl text-sm leading-7 text-[#53606c]">
-                Worked on full-stack web applications using React.js, Node.js, Express.js, and MongoDB, with focus on reusable UI components, REST APIs, and request testing using Thunder Client.
-              </p>
+              <ul className="mt-5 max-w-3xl list-disc space-y-2 pl-5 text-justify text-sm leading-7 text-[#53606c] marker:text-[#ff7800]">
+                <li>Developed and maintained responsive full-stack applications using React.js, Node.js, Express.js, and MongoDB.</li>
+                <li>Built reusable UI components with React.js, HTML, CSS, and Bootstrap, and integrated MongoDB databases using secure, optimized queries.</li>
+                <li>Implemented user authentication, form validation, and role-based access control to improve application security.</li>
+                <li>Developed and tested RESTful APIs with Thunder Client, managed source control through Git and GitHub, and supported debugging and deployment preparation.</li>
+              </ul>
             </article>
           </div>
         </div>
@@ -581,7 +595,7 @@ export default function PageHome() {
                   <div className="mt-5 grid gap-4 sm:grid-cols-2">
                     <div>
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">College</p>
-                      <p className="mt-2 text-sm font-black leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu,Kottayam</p>
+                      <p className="mt-2 text-sm font-normal leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu, Kottayam</p>
                     </div>
                     <div className="sm:pl-10 lg:pl-16">
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">University</p>
@@ -601,7 +615,7 @@ export default function PageHome() {
                   <div className="mt-5 grid gap-4 sm:grid-cols-2">
                     <div>
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">College</p>
-                      <p className="mt-2 text-sm font-black leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu,Kottayam</p>
+                      <p className="mt-2 text-sm font-normal leading-7 text-[#101010]">School of Technology and Applied Sciences, Pullarikunnu, Kottayam</p>
                     </div>
                     <div className="sm:pl-10 lg:pl-16">
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7800]">University</p>
@@ -623,8 +637,8 @@ export default function PageHome() {
       <section id="certificates" className="portfolio-section reveal-section scroll-mt-20 bg-white px-5 py-16 text-[#101010] sm:px-10 sm:py-24 lg:px-24 lg:py-12">
         <div className="mx-auto max-w-[1400px]">
           <h2 className="portfolio-section-heading text-[#ff7800]">Certifications</h2>
-          <div className="certification-grid mt-14 grid gap-8 md:grid-cols-2">
-            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+          <div className="certification-grid mt-10 grid gap-6 md:grid-cols-2">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued May 2026</p>
               <h3 className="mt-4 text-xl font-black text-[#101010]">Certified MERN Stack Developer</h3>
@@ -639,7 +653,7 @@ export default function PageHome() {
                 View Certificate
               </a>
             </article>
-            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Feb 2026</p>
               <h3 className="mt-4 text-xl font-black text-[#101010]">Software Engineering</h3>
@@ -654,7 +668,7 @@ export default function PageHome() {
                 View Certificate
               </a>
             </article>
-            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Dec 2025</p>
               <h3 className="mt-4 text-xl font-black text-[#101010]">Web Design &amp; Development</h3>
@@ -668,11 +682,11 @@ export default function PageHome() {
                 View Certificate
               </a>
             </article>
-            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-8 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
+            <article className="certification-card relative overflow-hidden rounded-xl border border-black/10 bg-white p-5 shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#ff7800]" />
               <p className="text-xs font-black uppercase tracking-[0.32em] text-[#ff7800]">Issued Mar 2025</p>
               <h3 className="mt-4 text-xl font-black text-[#101010]">Software Testing</h3>
-              <p className="mt-3 text-xs font-semibold leading-6 text-[#53606c]">NPTEL</p>
+              <p className="mt-3 text-xs font-semibold leading-6 text-[#53606c]">NPTEL (SWAYAM)</p>
               <a
                 href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS66S43820051901390323"
                 target="_blank"

@@ -64,7 +64,8 @@ export default function Navbar() {
 
         {/* Resume Button */}
         <a
-          href="/resume.pdf"
+          href="/images/Sreeparvathy_KA_Resume.pdf"
+          download
           className="rounded-lg bg-[#c8922a] px-5 py-2 text-sm font-semibold text-black transition hover:bg-[#d9a63f]"
         >
           Resume
