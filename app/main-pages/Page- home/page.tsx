@@ -31,6 +31,35 @@ const toolSkills = [
 const projects = [
   {
     number: "01",
+    label: "BUILD",
+    visualTitle: "BuildFlow",
+    image: "/images/construction_project.png",
+    type: "Construction Management",
+    title: "BuildFlow — Construction Management Platform",
+    date: "June 2026",
+    description:
+      "A full-stack MERN construction management platform that centralizes project planning and day-to-day site operations. It features secure JWT authentication, role-based dashboards for admin, site supervisors, storekeepers, and clients, along with project and worker management, attendance tracking, material inventory, expense monitoring, team messaging, notifications, progress updates, and operational reports.",
+    techStack: [
+      "React",
+      "React Router",
+      "Recharts",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "CSS",
+      "JavaScript",
+      "Vite",
+      "Axios",
+      "JWT",
+      "jsPDF",
+    ],
+    githubUrl: "https://github.com/sreeparvathy-K-A/buildflow-construction-management",
+    liveUrl: "https://buildflow-construction-management.vercel.app/",
+    liveLabel: "Live Link →",
+  },
+  {
+    number: "02",
     label: "SHOP",
     visualTitle: "Nutricart",
     image: "/images/Nutricart-project.jpg",
@@ -38,14 +67,27 @@ const projects = [
     title: "Nutricart-E-Commerce Platform",
     date: "Feb 2026 – Mar 2026",
     description:
-      "A full-stack MERN platform for ordering healthy meals from restaurants and diet-focused kitchens. It features JWT-secured, role-based dashboards for admins, restaurant owners, users, and delivery partners; food browsing, cart management with dynamic pricing, menu and order administration, and real-time order tracking from placement through delivery.",
-    techStack: ["React", "Node.js", "Express.js", "MongoDB"],
+      "A full-stack MERN platform for ordering healthy meals from restaurants and diet-focused kitchens. It features JWT-secured, role-based dashboards for admin, restaurant owners, users, and delivery partners; food browsing, cart management with dynamic pricing, menu and order administration, and real-time order tracking from placement through delivery.",
+    techStack: [
+      "React",
+      "React Router",
+      "CSS",
+      "Axios",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Cloudinary",
+      "Multer",
+      "Razorpay",
+    ],
     githubUrl: "https://github.com/sreeparvathy-K-A/Nutricart",
     liveUrl: "https://nutricart.vercel.app/",
-    backendUrl: "https://nutricart-waly.onrender.com/",
+    liveLabel: "Live Link →",
   },
   {
-    number: "02",
+    number: "03",
     label: "LEGAL",
     visualTitle: "CaseMate",
     image: "/images/casemate.jpg",
@@ -331,11 +373,11 @@ export default function PageHome() {
             <p className="mt-6 max-w-2xl text-[12px] font-medium leading-6 text-white/75 sm:text-base sm:leading-7">
               MCA graduate and MERN Stack Developer focused on building responsive web applications, RESTful APIs, and modern user experiences using React, Node.js, Express.js, and MongoDB.
             </p>
-            <div className="hero-actions mt-7 flex w-full justify-center sm:mt-8">
+            <div className="hero-actions mt-7 flex w-full min-w-0 justify-center px-2 sm:mt-8 sm:px-0">
               <a
                 href="/images/Sreeparvathy_KA_Resume.pdf"
                 download
-                className="hero-primary-cta inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-xl bg-[#ff7800] px-5 py-3 text-[9px] font-black uppercase tracking-[0.08em] text-black transition sm:px-6 sm:text-xs sm:tracking-[0.14em]"
+                className="hero-primary-cta inline-flex min-h-11 max-w-full items-center justify-center gap-2 whitespace-normal break-words rounded-xl bg-[#ff7800] px-4 py-3 text-center text-[9px] font-black uppercase leading-4 tracking-[0.06em] text-black transition sm:px-6 sm:text-xs sm:tracking-[0.14em]"
               >
                 Download Resume <span aria-hidden="true">↓</span>
               </a>
@@ -477,7 +519,6 @@ export default function PageHome() {
                   className="project-card-visual relative flex min-h-[240px] items-center justify-center overflow-hidden bg-cover bg-center px-6 py-6 text-center text-white md:min-h-[300px]"
                   style={{ backgroundImage: `url("${project.image}")` }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/15 transition group-hover:via-black/40" />
                   <div className="relative z-10 w-full">
                     <p className="text-xs font-black uppercase tracking-[0.38em] text-[#ff7800]">{project.type}</p>
                     <p className="mt-4 text-4xl font-black uppercase tracking-[0.14em] text-white">{project.label}</p>
@@ -496,7 +537,7 @@ export default function PageHome() {
                   )}
 
                   <div className="mt-4">
-                    <p className="text-sm font-black text-[#101820]">Tech Stack:</p>
+                    <p className="text-sm font-black text-[#101820]">Used Stack:</p>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {project.techStack.map((tech) => (
                         <span key={tech} className="rounded-md bg-[#f2f2f2] px-3 py-2 text-xs font-bold text-[#101820]">
@@ -509,20 +550,10 @@ export default function PageHome() {
                   <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-4 text-sm font-black">
                     {project.liveUrl ? (
                       <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-[#ff7800] transition hover:text-black">
-                        Frontend Live →
+                        {"liveLabel" in project ? project.liveLabel : "Frontend Live →"}
                       </a>
                     ) : !("hideLiveLink" in project && project.hideLiveLink) ? (
                       <span className="text-[#ff7800]/55">Go Live →</span>
-                    ) : null}
-                    {"backendUrl" in project && project.backendUrl ? (
-                      <a
-                        href={project.backendUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-[#ff7800] transition hover:text-black"
-                      >
-                        Backend Live →
-                      </a>
                     ) : null}
                     {project.githubUrl ? (
                       <a
@@ -564,7 +595,7 @@ export default function PageHome() {
                 </div>
                 <p className="text-xs font-black uppercase tracking-[0.24em] text-[#53606c]">08/2025 - 03/2026</p>
               </div>
-              <ul className="mt-5 max-w-3xl list-disc space-y-2 pl-5 text-justify text-sm leading-7 text-[#53606c] marker:text-[#ff7800]">
+              <ul className="mt-5 max-w-3xl list-disc space-y-2 pl-5 text-justify text-sm leading-7 text-[#101010] marker:text-[#ff7800]">
                 <li>Developed and maintained responsive full-stack applications using React.js, Node.js, Express.js, and MongoDB.</li>
                 <li>Built reusable UI components with React.js, HTML, CSS, and Bootstrap, and integrated MongoDB databases using secure, optimized queries.</li>
                 <li>Implemented user authentication, form validation, and role-based access control to improve application security.</li>
